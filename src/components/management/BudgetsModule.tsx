@@ -141,6 +141,7 @@ const BudgetsModule: React.FC<BudgetsModuleProps> = ({ selectedProject }) => {
 
   const loadData = async () => {
     setIsLoading(true);
+    //Esto cambia a una query
     try {
       const { data, error } = await supabase
         .from('budget_summary')
@@ -341,6 +342,7 @@ const BudgetsModule: React.FC<BudgetsModuleProps> = ({ selectedProject }) => {
     };
   };
 
+  // Aquí se guardaría el presupuesto, capítulos y partidas en la base de datos
   const handleSaveBudget = async () => {
     if (!budgetForm.budget_code || !budgetForm.client_id || !budgetForm.contractor) {
       showNotification('Complete los campos obligatorios (Código de presupuesto y Cliente)', 'error');
