@@ -1,10 +1,12 @@
-const express = require('express');
-const multer = require('multer');
-const nodemailer = require('nodemailer');
-const cors = require('cors');
-const path = require('path');
-const fs = require('fs');
-require('dotenv').config();
+import express from 'express';
+import multer from 'multer';
+import nodemailer from 'nodemailer';
+import cors from 'cors';
+import path from 'path';
+import fs from 'fs';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -53,29 +55,30 @@ const upload = multer({
   }
 });
 
-// Configurar nodemailer
-const transporter = nodemailer.createTransporter({
-  host: process.env.SMTP_HOST,
-  port: process.env.SMTP_PORT,
-  secure: false, // true para 465, false para otros puertos
-  requireTLS: true,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS
-  },
-  tls: {
-    ciphers: 'SSLv3'
-  }
-});
+// Configurar nodemailer awaiting...
+
+// const transporter = nodemailer.createTransporter({
+//   host: process.env.SMTP_HOST,
+//   port: process.env.SMTP_PORT,
+//   secure: false, // true para 465, false para otros puertos
+//   requireTLS: true,
+//   auth: {
+//     user: process.env.SMTP_USER,
+//     pass: process.env.SMTP_PASS
+//   },
+//   tls: {
+//     ciphers: 'SSLv3'
+//   }
+// });
 
 // Verificar configuración de email
-transporter.verify((error, success) => {
-  if (error) {
-    console.log('Error en configuración de email:', error);
-  } else {
-    console.log('Servidor de email configurado correctamente');
-  }
-});
+// transporter.verify((error, success) => {
+//   if (error) {
+//     console.log('Error en configuración de email:', error);
+//   } else {
+//     console.log('Servidor de email configurado correctamente');
+//   }
+// });
 
 // Endpoint para recibir solicitudes de empleo
 app.post('/api/submit-application', upload.fields([

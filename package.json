@@ -12,12 +12,14 @@
     "dev:full": "concurrently \"npm run dev\" \"npm run server\""
   },
   "dependencies": {
+    "@apollo/client": "^4.1.6",
     "@supabase/supabase-js": "^2.87.3",
     "@types/multer": "^2.0.0",
     "@types/nodemailer": "^6.4.17",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "graphql": "^16.13.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.2",
     "jspdf-autotable": "^5.0.2",
@@ -26,6 +28,7 @@
     "nodemailer": "^7.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "rxjs": "^7.8.2",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
