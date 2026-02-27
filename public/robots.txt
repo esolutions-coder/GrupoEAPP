@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://grupoea.es/sitemap.xml
+
+# Páginas importantes
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /projects
+Allow: /contact
+Allow: /recruitment
+
+# Archivos estáticos
+Allow: /assets/
+Allow: /images/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Crawl-delay para ser respetuosos
+Crawl-delay: 1
